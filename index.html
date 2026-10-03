@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduConnect Ethiopia</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                Edu<span>Connect</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#cities">Schools</a>
+
+                <a href="#about">About</a>
+
+            </nav>
+
+            <a href="#" class="school-login">
+                School Login
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main id="home">
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <p class="section-label">
+                        EDUCONNECT ETHIOPIA
+                    </p>
+
+                    <h1>
+                        Find the right school
+                        <span>for your future.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover schools, explore their programs
+                        and facilities, and hear from families
+                        before making your choice.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        onclick="goToCities()">
+
+                        Explore Schools
+
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-card hero-card-one">
+                        <span>Schools</span>
+                        <strong>Discover</strong>
+                    </div>
+
+                    <div class="hero-card hero-card-two">
+                        <span>Families</span>
+                        <strong>Compare</strong>
+                    </div>
+
+                    <div class="hero-card hero-card-three">
+                        <span>Education</span>
+                        <strong>Choose</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CITIES ================= -->
+
+        <section id="cities" class="cities-section">
+            <div class="container">
+
+
+                <div class="cities-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            EXPLORE LOCATIONS
+                        </p>
+
+                        <h2>
+                            Find schools in your city
+                        </h2>
+
+                    </div>
+
+                    <p class="cities-description">
+                        Start by selecting a city and explore
+                        schools available in your area.
+                    </p>
+
+                </div>
+
+
+                <div class="city-grid">
+
+
+                    <!-- ADDIS ABABA -->
+
+                    <button
+                        class="city-card"
+                        onclick="showSchools('Addis Ababa')">
+
+                        <div class="city-visual addis">
+
+                            <span class="city-badge">
+                                Capital City
+                            </span>
+
+                            <strong>
+                                AA
+                            </strong>
+
+                        </div>
+
+                        <div class="city-info">
+
+                            <div>
+
+                                <h3>
+                                    Addis Ababa
+                                </h3>
+
+                                <p>
+                                    Explore schools across
+                                    Ethiopia's capital city.
+                                </p>
+
+                            </div>
+
+                            <span class="city-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- BAHIR DAR -->
+
+                    <button
+                        class="city-card"
+                        onclick="showSchools('Bahir Dar')">
+
+                        <div class="city-visual bahir-dar">
+
+                            <span class="city-badge">
+                                Amhara Region
+                            </span>
+
+                            <strong>
+                                BD
+                            </strong>
+
+                        </div>
+
+                        <div class="city-info">
+
+                            <div>
+
+                                <h3>
+                                    Bahir Dar
+                                </h3>
+
+                                <p>
+                                    Discover schools around
+                                    the beautiful Lake Tana city.
+                                </p>
+
+                            </div>
+
+                            <span class="city-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- HAWASSA -->
+
+                    <button
+                        class="city-card"
+                        onclick="showSchools('Hawassa')">
+
+                        <div class="city-visual hawassa">
+
+                            <span class="city-badge">
+                                Sidama Region
+                            </span>
+
+                            <strong>
+                                HW
+                            </strong>
+
+                        </div>
+
+                        <div class="city-info">
+
+                            <div>
+
+                                <h3>
+                                    Hawassa
+                                </h3>
+
+                                <p>
+                                    Explore schools in the
+                                    growing city of Hawassa.
+                                </p>
+
+                            </div>
+
+                            <span class="city-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- ADAMA -->
+
+                    <button
+                        class="city-card"
+                        onclick="showSchools('Adama')">
+
+                        <div class="city-visual adama">
+
+                            <span class="city-badge">
+                                Oromia Region
+                            </span>
+
+                            <strong>
+                                AD
+                            </strong>
+
+                        </div>
+
+                        <div class="city-info">
+
+                            <div>
+
+                                <h3>
+                                    Adama
+                                </h3>
+
+                                <p>
+                                    Discover schools in Adama
+                                    and surrounding areas.
+                                </p>
+
+                            </div>
+
+                            <span class="city-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCHOOL LIST ================= -->
+
+     <section id="school-list" class="school-list-section hidden">
+
+    <div class="school-list-header">
+
+        <button class="back-button" onclick="showCities()">
+            ← Back to cities
+        </button>
+
+        <span class="section-label">SCHOOLS</span>
+
+        <h2 id="selected-city-title">
+            Schools
+        </h2>
+
+        <p>
+            Explore schools and discover information about their
+            programs, facilities, location and more.
+        </p>
+
+    </div>
+
+
+    <!-- Search and filter -->
+    <div class="school-tools">
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="school-search"
+                placeholder="Search schools..."
+                oninput="filterSchools()"
+            >
+
+        </div>
+
+
+        <select id="level-filter" onchange="filterSchools()">
+
+            <option value="all">
+                All levels
+            </option>
+
+            <option value="Primary">
+                Primary
+            </option>
+
+            <option value="Secondary">
+                Secondary
+            </option>
+
+            <option value="Primary & Secondary">
+                Primary & Secondary
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- School cards -->
+    <div id="school-grid" class="school-grid"></div>
+
+
+    <!-- No result -->
+    <div id="no-schools" class="no-schools hidden">
+
+        <div class="no-schools-icon">
+            🔍
+        </div>
+
+        <h3>No schools found</h3>
+
+        <p>
+            Try another school name or change the filter.
+        </p>
+
+    </div>
+
+</section>
+
+
+        <!-- ================= SCHOOL DETAILS ================= -->
+
+        <section
+            id="school-details"
+            class="school-details-section hidden">
+
+            <div class="container">
+
+
+                <button
+                    class="back-button"
+                    onclick="backToSchools()">
+
+                    ← Back to Schools
+
+                </button>
+
+
+                <div id="school-detail-container">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            id="about"
+            class="about-section">
+
+            <div class="container about-grid">
+
+                <div>
+
+                    <p class="section-label">
+                        ABOUT EDUCONNECT
+                    </p>
+
+                    <h2>
+                        Making school discovery
+                        easier for families.
+                    </h2>
+
+                </div>
+
+                <div>
+
+                    <p>
+                        EduConnect Ethiopia is a school discovery
+                        platform designed to help students and
+                        families find useful information about
+                        schools in their city.
+                    </p>
+
+                    <p>
+                        Families can explore school profiles,
+                        programs, facilities, posts and reviews
+                        without creating an account.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+
+                <a href="#" class="footer-logo">
+                    Edu<span>Connect</span>
+                </a>
+
+                <p>
+                    Find · Compare · Choose
+                </p>
+
+            </div>
+
+            <p>
+                © 2026 EduConnect Ethiopia
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
