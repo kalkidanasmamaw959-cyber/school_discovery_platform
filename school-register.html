@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>School Registration | EduConnect Ethiopia</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="nav">
+
+            <a href="index.html" class="logo">
+                EduConnect
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#cities">Schools</a>
+                <a href="index.html#about">About</a>
+            </div>
+
+            <a href="school-login.html" class="school-login">
+                School Login
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- REGISTRATION SECTION -->
+
+    <main class="registration-page">
+
+        <div class="registration-container">
+
+            <!-- LEFT SIDE -->
+
+            <div class="registration-intro">
+
+                <span class="section-label">
+                    SCHOOL PARTNERS
+                </span>
+
+                <h1>
+                    Bring your school
+                    to EduConnect.
+                </h1>
+
+                <p>
+                    Create a school account and introduce your
+                    school to students and families searching
+                    for the right educational opportunity.
+                </p>
+
+                <div class="registration-benefits">
+
+                    <div class="benefit">
+                        <span>✓</span>
+                        <div>
+                            <h3>Reach more families</h3>
+                            <p>
+                                Help students discover your school.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <span>✓</span>
+                        <div>
+                            <h3>Manage your profile</h3>
+                            <p>
+                                Keep your school information updated.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <span>✓</span>
+                        <div>
+                            <h3>Share school updates</h3>
+                            <p>
+                                Publish posts, news and announcements.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="registration-card">
+
+                <div class="form-header">
+
+                    <span class="section-label">
+                        CREATE ACCOUNT
+                    </span>
+
+                    <h2>
+                        Register your school
+                    </h2>
+
+                    <p>
+                        Fill in the information below to get started.
+                    </p>
+
+                </div>
+
+
+                <form id="registration-form">
+
+
+                    <!-- SCHOOL INFORMATION -->
+
+                    <div class="form-section">
+
+                        <h3>School Information</h3>
+
+                        <div class="form-group">
+
+                            <label for="school-name">
+                                School Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="school-name"
+                                placeholder="Enter school name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="school-city">
+                                    City
+                                </label>
+
+                                <select id="school-city" required>
+
+                                    <option value="">
+                                        Select city
+                                    </option>
+
+                                    <option value="Addis Ababa">
+                                        Addis Ababa
+                                    </option>
+
+                                    <option value="Bahir Dar">
+                                        Bahir Dar
+                                    </option>
+
+                                    <option value="Hawassa">
+                                        Hawassa
+                                    </option>
+
+                                    <option value="Adama">
+                                        Adama
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="school-level">
+                                    School Level
+                                </label>
+
+                                <select id="school-level" required>
+
+                                    <option value="">
+                                        Select level
+                                    </option>
+
+                                    <option value="Primary">
+                                        Primary
+                                    </option>
+
+                                    <option value="Secondary">
+                                        Secondary
+                                    </option>
+
+                                    <option value="Primary & Secondary">
+                                        Primary & Secondary
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="school-address">
+                                School Address
+                            </label>
+
+                            <input
+                                type="text"
+                                id="school-address"
+                                placeholder="Enter school address"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT INFORMATION -->
+
+                    <div class="form-section">
+
+                        <h3>Contact Information</h3>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="school-email">
+                                    School Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="school-email"
+                                    placeholder="school@example.com"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="school-phone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="school-phone"
+                                    placeholder="+251..."
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="school-website">
+                                Website
+                                <span>(Optional)</span>
+                            </label>
+
+                            <input
+                                type="url"
+                                id="school-website"
+                                placeholder="https://example.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="school-telegram">
+                                Telegram / Social Link
+                                <span>(Optional)</span>
+                            </label>
+
+                            <input
+                                type="url"
+                                id="school-telegram"
+                                placeholder="https://t.me/..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACCOUNT INFORMATION -->
+
+                    <div class="form-section">
+
+                        <h3>Account Information</h3>
+
+                        <div class="form-group">
+
+                            <label for="username">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Create a username"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="password">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Create a password"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="confirm-password">
+                                    Confirm Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="confirm-password"
+                                    placeholder="Repeat password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- VERIFICATION -->
+
+                    <div class="verification-notice">
+
+                        <strong>
+                            Verification required
+                        </strong>
+
+                        <p>
+                            Your school profile will be reviewed
+                            before it becomes officially verified
+                            on EduConnect.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="register-button"
+                    >
+                        Create School Account
+                    </button>
+
+
+                    <p id="registration-message"
+                       class="registration-message">
+                    </p>
+
+
+                    <p class="login-link">
+
+                        Already have an account?
+
+                        <a href="school-login.html">
+                            School Login
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>EduConnect Ethiopia</h3>
+                <p>
+                    Find · Compare · Choose
+                </p>
+            </div>
+
+            <p>
+                © 2026 EduConnect Ethiopia
+            </p>
+
+        </div>
+
+    </footer>
+
+
+  <script src="registration.js"></script>
+
+</body>
+
+</html>
