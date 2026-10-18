@@ -1,288 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>School Dashboard | EduConnect Ethiopia</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="dashboard-page">
+<body>
 
-    <!-- Dashboard Header -->
+    <!-- Header -->
     <header class="dashboard-header">
+        <a href="index.html" class="dashboard-logo">
+            <span>EduConnect</span> Ethiopia
+        </a>
 
-        <div class="dashboard-logo">
-            EduConnect <span>Ethiopia</span>
+        <div class="dashboard-header-right">
+            <span class="dashboard-school-name">SOS School</span>
+            <a href="school-login.html" class="dashboard-logout">Logout</a>
         </div>
-
-        <div class="dashboard-user">
-            <span>SOS School</span>
-
-            <a href="school-login.html" class="dashboard-logout">
-                Logout
-            </a>
-        </div>
-
     </header>
-
 
     <!-- Dashboard Layout -->
     <div class="dashboard-layout">
 
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
-
-            <nav>
-
-                <a href="#" class="dashboard-nav active">
-                    Dashboard
-                </a>
-
-                <a href="#" class="dashboard-nav">
-                    My Profile
-                </a>
-
-                <a href="#" class="dashboard-nav">
-                    Photos
-                </a>
-
-                <a href="#" class="dashboard-nav">
-                    Posts
-                </a>
-
-                <a href="#" class="dashboard-nav">
-                    Reviews
-                </a>
-
-                <a href="#" class="dashboard-nav">
-                    Settings
-                </a>
-
+            <nav class="dashboard-nav">
+                <a href="#dashboard-home" class="active">Dashboard</a>
+                <a href="#school-profile">My Profile</a>
+                <a href="#school-photos">Photos</a>
+                <a href="#school-posts">Posts</a>
+                <a href="#recent-activity">Reviews</a>
+                <a href="#school-profile">Settings</a>
             </nav>
-
         </aside>
 
+        <!-- Main Content -->
+        <main class="dashboard-main" id="dashboard-home">
 
-        <!-- Main Dashboard -->
-        <main class="dashboard-main">
-
-            <!-- Welcome -->
+            <!-- Welcome Section -->
             <section class="dashboard-welcome">
-
                 <div>
-                    <p class="dashboard-label">
-                        SCHOOL DASHBOARD
-                    </p>
-
-                    <h1>
-                        Welcome, SOS School
-                    </h1>
-
-                    <p>
-                        Manage your school profile and keep your
-                        information up to date for families and students.
-                    </p>
+                    <p class="dashboard-small-label">SCHOOL DASHBOARD</p>
+                    <h1>Welcome, SOS School!</h1>
+                    <p>Manage your school's information and connect with families.</p>
                 </div>
 
-                <div class="verification-badge">
+                <span class="verification-badge">
                     Pending Verification
-                </div>
-
+                </span>
             </section>
-
 
             <!-- Statistics -->
             <section class="dashboard-stats">
 
-                <div class="dashboard-stat-card">
-
+                <div class="stat-card">
                     <p>Profile Completion</p>
-
                     <h2>75%</h2>
-
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                    </div>
-
                 </div>
 
-
-                <div class="dashboard-stat-card">
-
+                <div class="stat-card">
                     <p>Photos</p>
-
-                    <h2>0</h2>
-
-                    <span>
-                        Add photos to your profile
-                    </span>
-
+                    <h2 id="photo-count">0</h2>
                 </div>
 
-
-                <div class="dashboard-stat-card">
-
+                <div class="stat-card">
                     <p>Posts</p>
-
-                    <h2>0</h2>
-
-                    <span>
-                        Share school updates
-                    </span>
-
+                    <h2 id="post-count">0</h2>
                 </div>
 
-
-                <div class="dashboard-stat-card">
-
+                <div class="stat-card">
                     <p>Reviews</p>
-
                     <h2>0</h2>
-
-                    <span>
-                        Family reviews
-                    </span>
-
                 </div>
 
             </section>
 
-
-            <!-- Dashboard Content -->
+            <!-- Dashboard Cards -->
             <section class="dashboard-content-grid">
 
-                <!-- Profile -->
-                <div class="dashboard-card">
+                <!-- My Profile Card -->
+                <div class="dashboard-card" id="school-profile">
 
                     <div class="dashboard-card-header">
-
                         <div>
                             <p class="dashboard-small-label">
                                 SCHOOL INFORMATION
                             </p>
-
                             <h2>My Profile</h2>
                         </div>
 
-                        <button class="dashboard-action">
+                        <button
+                            type="button"
+                            class="dashboard-action"
+                            id="edit-profile-btn">
                             Edit Profile
                         </button>
-
                     </div>
 
-                    <div class="profile-information">
+                    <!-- Profile Display -->
+                    <div class="profile-information" id="profile-display">
 
                         <div>
                             <strong>School Name</strong>
-                            <p>SOS School</p>
+                            <p id="display-school-name">SOS School</p>
                         </div>
 
                         <div>
                             <strong>City</strong>
-                            <p>Bahir Dar</p>
+                            <p id="display-city">Bahir Dar</p>
                         </div>
 
                         <div>
-                            <strong>Level</strong>
-                            <p>Primary & Secondary</p>
+                            <strong>School Level</strong>
+                            <p id="display-level">Primary &amp; Secondary</p>
                         </div>
 
                         <div>
                             <strong>Email</strong>
-                            <p>school@example.com</p>
+                            <p id="display-email">school@example.com</p>
                         </div>
 
                         <div>
                             <strong>Phone</strong>
-                            <p>+251 900 000 000</p>
+                            <p id="display-phone">+251 900 000 000</p>
                         </div>
 
                         <div>
                             <strong>Address</strong>
-                            <p>Bahir Dar, Ethiopia</p>
+                            <p id="display-address">Bahir Dar, Ethiopia</p>
+                        </div>
+
+                        <div>
+                            <strong>Website</strong>
+                            <p id="display-website">Not provided</p>
+                        </div>
+
+                        <div>
+                            <strong>Telegram</strong>
+                            <p id="display-telegram">Not provided</p>
                         </div>
 
                     </div>
 
+                    <!-- Profile Edit Form -->
+                    <form id="profile-form" hidden>
+
+                        <div class="profile-edit-grid">
+
+                            <div class="profile-field">
+                                <label for="edit-school-name">School Name</label>
+                                <input
+                                    id="edit-school-name"
+                                    type="text"
+                                    required>
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-city">City</label>
+                                <select id="edit-city" required>
+                                    <option value="">Choose a city</option>
+                                    <option value="Addis Ababa">Addis Ababa</option>
+                                    <option value="Bahir Dar">Bahir Dar</option>
+                                    <option value="Hawassa">Hawassa</option>
+                                    <option value="Adama">Adama</option>
+                                </select>
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-level">School Level</label>
+                                <select id="edit-level" required>
+                                    <option value="">Choose a level</option>
+                                    <option value="Kindergarten">Kindergarten</option>
+                                    <option value="Primary">Primary</option>
+                                    <option value="Secondary">Secondary</option>
+                                    <option value="Primary & Secondary">
+                                        Primary &amp; Secondary
+                                    </option>
+                                    <option value="Kindergarten, Primary & Secondary">
+                                        Kindergarten, Primary &amp; Secondary
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-email">Email</label>
+                                <input
+                                    id="edit-email"
+                                    type="email"
+                                    required>
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-phone">Phone</label>
+                                <input
+                                    id="edit-phone"
+                                    type="tel"
+                                    required>
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-address">Address</label>
+                                <input
+                                    id="edit-address"
+                                    type="text"
+                                    required>
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-website">Website</label>
+                                <input
+                                    id="edit-website"
+                                    type="url"
+                                    placeholder="https://example.com">
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-telegram">Telegram Link</label>
+                                <input
+                                    id="edit-telegram"
+                                    type="url"
+                                    placeholder="https://t.me/your_school">
+                            </div>
+
+                        </div>
+
+                        <p id="profile-message" role="status"></p>
+
+                        <div class="profile-form-actions">
+                            <button type="submit" class="dashboard-action">
+                                Save Changes
+                            </button>
+
+                            <button
+                                type="button"
+                                class="profile-cancel-btn"
+                                id="cancel-profile-btn">
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
                 </div>
 
-
-                <!-- Quick Actions -->
+                <!-- Quick Actions Card -->
                 <div class="dashboard-card">
 
                     <div class="dashboard-card-header">
-
                         <div>
-                            <p class="dashboard-small-label">
-                                GET STARTED
-                            </p>
-
+                            <p class="dashboard-small-label">GET STARTED</p>
                             <h2>Quick Actions</h2>
                         </div>
-
                     </div>
 
                     <div class="quick-actions">
 
-                        <button>
+                        <button type="button" id="add-photos-btn">
                             + Add Photos
                         </button>
 
-                        <button>
+                        <button type="button" id="create-post-btn">
                             + Create Post
                         </button>
 
-                        <button>
+                        <button type="button" id="quick-edit-profile-btn">
                             Edit Profile
                         </button>
 
+                    </div>
+
+                    <!-- Photo Selection -->
+                    <input
+                        type="file"
+                        id="school-photo-input"
+                        accept="image/*"
+                        multiple
+                        hidden>
+
+                    <!-- Photo Preview Area -->
+                    <div id="school-photos">
+                        <h3>School Photos</h3>
+                        <div
+                            id="school-photo-preview"
+                            class="photo-preview">
+                        </div>
+                    </div>
+
+                    <!-- School Posts -->
+                    <div id="school-posts" class="school-posts">
+                        <h3>My School Posts</h3>
+                        <p id="no-posts-message">
+                            You haven't created any posts yet.
+                        </p>
                     </div>
 
                 </div>
 
             </section>
 
-
             <!-- Recent Activity -->
-            <section class="dashboard-card recent-activity">
+            <section
+                class="dashboard-card recent-activity"
+                id="recent-activity">
 
                 <div class="dashboard-card-header">
-
                     <div>
-                        <p class="dashboard-small-label">
-                            ACTIVITY
-                        </p>
-
+                        <p class="dashboard-small-label">ACTIVITY</p>
                         <h2>Recent Activity</h2>
                     </div>
-
                 </div>
 
                 <div class="empty-activity">
-
-                    <div class="empty-icon">
-                        +
-                    </div>
-
+                    <div class="empty-icon">+</div>
                     <h3>No activity yet</h3>
-
                     <p>
                         Start by completing your school profile
                         and adding some photos.
                     </p>
-
                 </div>
 
             </section>
 
         </main>
-
     </div>
 
-</body>
+    <!-- JavaScript -->
+    <script src="dashboard.js"></script>
 
+</body>
 </html>
+

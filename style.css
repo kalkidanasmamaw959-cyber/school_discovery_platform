@@ -3620,3 +3620,246 @@ a {
     }
 
 }
+/* ==============================
+   EDIT SCHOOL PROFILE
+   ============================== */
+
+#profile-form[hidden] {
+    display: none;
+}
+
+.profile-edit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #344054;
+}
+
+.profile-field input,
+.profile-field select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #dfe4ec;
+    border-radius: 9px;
+    background: #fff;
+    color: #172033;
+    font: inherit;
+    font-size: 14px;
+}
+
+.profile-field input:focus,
+.profile-field select:focus {
+    outline: none;
+    border-color: #356ae6;
+    box-shadow: 0 0 0 3px rgba(53, 106, 230, 0.12);
+}
+
+.profile-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.profile-cancel-btn {
+    padding: 9px 15px;
+    border: 1px solid #dfe4ec;
+    border-radius: 9px;
+    background: white;
+    color: #344054;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-cancel-btn:hover {
+    background: #f6f8fc;
+}
+
+#profile-message {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .profile-edit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-form-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* ==================================
+   PROFILE EDITING FORM
+================================== */
+
+#profile-form[hidden],
+#school-photo-input[hidden] {
+    display: none !important;
+}
+
+.profile-edit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #344054;
+}
+
+.profile-field input,
+.profile-field select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #dfe4ec;
+    border-radius: 9px;
+    background: #fff;
+    color: #172033;
+    font: inherit;
+    font-size: 14px;
+}
+
+.profile-field input:focus,
+.profile-field select:focus {
+    outline: none;
+    border-color: #356ae6;
+    box-shadow: 0 0 0 3px rgba(53, 106, 230, 0.12);
+}
+
+.profile-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.profile-cancel-btn {
+    padding: 10px 16px;
+    border: 1px solid #dfe4ec;
+    border-radius: 9px;
+    background: white;
+    color: #344054;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-cancel-btn:hover {
+    background: #f6f8fc;
+}
+
+#profile-message {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* ==================================
+   SCHOOL PHOTOS
+================================== */
+
+#school-photos {
+    margin-top: 25px;
+}
+
+#school-photos h3,
+.school-posts h3 {
+    margin-bottom: 14px;
+}
+
+.photo-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.school-photo {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e1e5ec;
+}
+
+/* ==================================
+   SCHOOL POSTS
+================================== */
+
+.school-posts {
+    margin-top: 25px;
+}
+
+.school-post {
+    padding: 15px;
+    margin-bottom: 12px;
+    background: #f7f9fc;
+    border: 1px solid #e1e5ec;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.school-post p {
+    margin: 0 0 10px;
+    color: #263247;
+}
+
+.school-post small {
+    color: #667085;
+    font-size: 12px;
+}
+
+/* ==================================
+   MOBILE RESPONSIVENESS
+================================== */
+
+@media (max-width: 600px) {
+    .profile-edit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-form-actions {
+        flex-direction: column;
+    }
+
+    .profile-form-actions button {
+        width: 100%;
+    }
+}
+
+.contact-item a {
+    color: #2563eb;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 6px;
+}

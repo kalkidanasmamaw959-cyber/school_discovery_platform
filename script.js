@@ -6,266 +6,274 @@ const schools = [
     ========================= */
 
     {
-        id: 1,
-        name: "SOS School",
-        city: "Bahir Dar",
-        level: "Primary & Secondary",
-        location: "Bahir Dar, Ethiopia",
+  id: 1,
+name: "SOS School",
+city: "Bahir Dar",
+level: "Primary & Secondary",
+location: "Kebele 13, Bahir Dar, Ethiopia",
+description: "School details and contact information are being collected. Please confirm the address and contacts.",
+programs: ["Primary Education", "Secondary Education"],
+facilities: ["Library", "Computer Lab", "Science Lab", "Playground"],
+website: "",
+email: "",
+phone: "",
+telegram: "",
+posts: [],
+reviews: []
+},
 
-        description:
-            "School information will be added after the school data collection phase.",
+{
+    id: 2,
+    name: "Bahir Dar Academy",
+    city: "Bahir Dar",
+    level: "Primary & Secondary",
+    location: "Kebele 16, Bahir Dar, Ethiopia",
+    description: "Contact details are from public listings and should be confirmed with the school.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab", "Playground"],
+    website: "https://bdaschool.net",
+    email: "bdaschool@gmail.com",
+    phone: "+251582208313",
+    telegram: "https://t.me/s/bdaschool",
+    posts: [],
+    reviews: []
+},
 
-        programs: [
-            "Primary Education",
-            "Secondary Education"
-        ],
+{
+    id: 3,
+    name: "Catholic School",
+    city: "Bahir Dar",
+    level: "Primary & Secondary",
+    location: "Bahir Dar, Ethiopia",
+    description: "The exact Catholic school branch has not yet been identified. Address and contact information need confirmation.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        facilities: [
-            "Library",
-            "Computer Lab",
-            "Science Lab",
-            "Playground"
-        ],
+{
+    id: 4,
+    name: "Eshet School",
+    city: "Bahir Dar",
+    level: "Primary & Secondary",
+    location: "Kebele 16, Bahir Dar, Ethiopia",
+    description: "A public directory lists Eshet Academy in Bahir Dar. Confirm the exact address and phone number with the school.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab", "Playground"],
+    website: "",
+    email: "",
+    phone: "+251582263349",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
-
-        posts: [],
-
-        reviews: []
-    },
-
-
-    {
-        id: 2,
-        name: "Bahir Dar Academy",
-        city: "Bahir Dar",
-        level: "Primary & Secondary",
-        location: "Bahir Dar, Ethiopia",
-
-        description:
-            "School information will be added after the school data collection phase.",
-
-        programs: [
-            "Primary Education",
-            "Secondary Education"
-        ],
-
-        facilities: [
-            "Library",
-            "Computer Lab",
-            "Playground"
-        ],
-
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
-
-        posts: [],
-
-        reviews: []
-    },
-
-
-    {
-        id: 3,
-        name: "Catholic School",
-        city: "Bahir Dar",
-        level: "Primary & Secondary",
-        location: "Bahir Dar, Ethiopia",
-
-        description:
-            "School information will be added after the school data collection phase.",
-
-        programs: [
-            "Primary Education",
-            "Secondary Education"
-        ],
-
-        facilities: [
-            "Library",
-            "Computer Lab"
-        ],
-
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
-
-        posts: [],
-
-        reviews: []
-    },
+{
+    id: 5,
+    name: "Abune Gorgorios School",
+    city: "Bahir Dar",
+    level: "Primary & Secondary",
+    location: "Bahir Dar, Ethiopia",
+    description: "School address and contact details need confirmation for the Bahir Dar branch.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab", "Science Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
 
-    {
-        id: 4,
-        name: "Eshet School",
-        city: "Bahir Dar",
-        level: "Primary & Secondary",
-        location: "Bahir Dar, Ethiopia",
+/* =========================
+   ADDIS ABABA
+========================= */
 
-        description:
-            "School information will be added after the school data collection phase.",
+{
+    id: 6,
+    name: "Abune Gorgorios School",
+    city: "Addis Ababa",
+    level: "Primary & Secondary",
+    location: "Addis Ababa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        programs: [
-            "Primary Education",
-            "Secondary Education"
-        ],
+{
+    id: 7,
+    name: "Cathedral School",
+    city: "Addis Ababa",
+    level: "Primary & Secondary",
+    location: "Addis Ababa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        facilities: [
-            "Library",
-            "Computer Lab",
-            "Playground"
-        ],
+{
+    id: 8,
+    name: "Safari School",
+    city: "Addis Ababa",
+    level: "Primary & Secondary",
+    location: "Addis Ababa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
+{
+    id: 9,
+    name: "Green School",
+    city: "Addis Ababa",
+    level: "Primary & Secondary",
+    location: "Addis Ababa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        posts: [],
-
-        reviews: []
-    },
-
-
-    {
-        id: 5,
-        name: "Abune Gorgorios School",
-        city: "Bahir Dar",
-        level: "Primary & Secondary",
-        location: "Bahir Dar, Ethiopia",
-
-        description:
-            "School information will be added after the school data collection phase.",
-
-        programs: [
-            "Primary Education",
-            "Secondary Education"
-        ],
-
-        facilities: [
-            "Library",
-            "Computer Lab",
-            "Science Lab"
-        ],
-
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
-
-        posts: [],
-
-        reviews: []
-    },
-
-
-    /* =========================
-       ADDIS ABABA
-    ========================= */
-
-    {
-        id: 6,
-        name: "School Profile Coming Soon",
-        city: "Addis Ababa",
-        level: "Primary",
-        location: "Addis Ababa, Ethiopia",
-
-        description:
-            "Real school information will be added after the data collection phase.",
-
-        programs: [
-            "Primary Education"
-        ],
-
-        facilities: [
-            "Library",
-            "Computer Lab"
-        ],
-
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
-
-        posts: [],
-
-        reviews: []
-    },
+{
+    id: 10,
+    name: "Ethio Excellence",
+    city: "Addis Ababa",
+    level: "Primary & Secondary",
+    location: "Addis Ababa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
 
     /* =========================
-       HAWASSA
-    ========================= */
+   HAWASSA
+========================= */
 
-    {
-        id: 7,
-        name: "School Profile Coming Soon",
-        city: "Hawassa",
-        level: "Secondary",
-        location: "Hawassa, Ethiopia",
+{
+    id: 11,
+    name: "Union SOS",
+    city: "Hawassa",
+    level: "Primary & Secondary",
+    location: "Hawassa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        description:
-            "Real school information will be added after the data collection phase.",
+{
+    id: 12,
+    name: "EPS",
+    city: "Hawassa",
+    level: "Primary & Secondary",
+    location: "Hawassa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        programs: [
-            "Secondary Education"
-        ],
+{
+    id: 13,
+    name: "Comboni",
+    city: "Hawassa",
+    level: "Primary & Secondary",
+    location: "Hawassa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        facilities: [
-            "Library",
-            "Computer Lab"
-        ],
+{
+    id: 14,
+    name: "Kdus Gebrel",
+    city: "Hawassa",
+    level: "Primary & Secondary",
+    location: "Hawassa, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+},
 
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
 
-        posts: [],
+   /* =========================
+   ADAMA
+========================= */
 
-        reviews: []
-    },
-
-
-    /* =========================
-       ADAMA
-    ========================= */
-
-    {
-        id: 8,
-        name: "School Profile Coming Soon",
-        city: "Adama",
-        level: "Primary & Secondary",
-        location: "Adama, Ethiopia",
-
-        description:
-            "Real school information will be added after the data collection phase.",
-
-        programs: [
-            "Primary Education",
-            "Secondary Education"
-        ],
-
-        facilities: [
-            "Library",
-            "Computer Lab"
-        ],
-
-        website: "",
-        email: "",
-        phone: "",
-        telegram: "",
-
-        posts: [],
-
-        reviews: []
-    }
+{
+    id: 15,
+    name: "Makko Billi School",
+    city: "Adama",
+    level: "Primary & Secondary",
+    location: "Adama, Ethiopia",
+    description: "School information will be added after the school data collection phase.",
+    programs: ["Primary Education", "Secondary Education"],
+    facilities: ["Library", "Computer Lab"],
+    website: "",
+    email: "",
+    phone: "",
+    telegram: "",
+    posts: [],
+    reviews: []
+}
 
 ];
 
@@ -581,42 +589,81 @@ function showSchoolDetails(id) {
             </div>
         `;
 
-    const contact = [
-        school.location && `
-            <div class="contact-item">
-                <strong>📍 Location</strong>
-                <span>${school.location}</span>
-            </div>
-        `,
+    
+const makeWebUrl = (value) => {
+    if (!value) return "";
 
-        school.phone && `
-            <div class="contact-item">
-                <strong>📞 Phone</strong>
-                <span>${school.phone}</span>
-            </div>
-        `,
+    const url = value.trim();
 
-        school.email && `
-            <div class="contact-item">
-                <strong>✉ Email</strong>
-                <span>${school.email}</span>
-            </div>
-        `,
+    if (/^https?:\/\//i.test(url)) {
+        return url;
+    }
 
-        school.website && `
-            <div class="contact-item">
-                <strong>🌐 Website</strong>
-                <span>${school.website}</span>
-            </div>
-        `,
+    return "https://" + url;
+};
 
-        school.telegram && `
-            <div class="contact-item">
-                <strong>✈ Telegram</strong>
-                <span>${school.telegram}</span>
-            </div>
-        `
-    ].filter(Boolean).join("");
+const contact = [
+    school.location && `
+  <div class="contact-item">
+    <strong>📍 Location</strong>
+
+    <a
+        href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            school.location || `${school.name}, ${school.city}, Ethiopia`
+        )}"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        ${school.location
+            ? `${school.location} — View Map`
+            : `Search ${school.name} on Google Maps`}
+    </a>
+</div>
+`,
+
+    school.phone && `
+        <div class="contact-item">
+            <strong>📞 Phone</strong>
+            <a href="tel:${school.phone.replace(/[^\d+]/g, "")}">
+                ${school.phone}
+            </a>
+        </div>
+    `,
+
+    school.email && `
+        <div class="contact-item">
+            <strong>✉ Email</strong>
+            <a href="mailto:${school.email}">
+                ${school.email}
+            </a>
+        </div>
+    `,
+
+    school.website && `
+        <div class="contact-item">
+            <strong>🌐 Website</strong>
+            <a
+                href="${makeWebUrl(school.website)}"
+                target="_blank"
+                rel="noopener noreferrer">
+                Visit School Website ↗
+            </a>
+        </div>
+    `,
+
+    school.telegram && `
+        <div class="contact-item">
+            <strong>✈ Telegram</strong>
+            <a
+                href="${makeWebUrl(school.telegram)}"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Telegram ↗
+            </a>
+        </div>
+    `
+].filter(Boolean).join("");
+
 
     details.innerHTML = `
 
