@@ -1,9 +1,19 @@
-from backend.app import app
-from backend.models import db, School
+import argparse
+import sys
+from pathlib import Path
+
+try:
+    from .app import create_app
+    from .models import School, db
+except ImportError:  # Supports "python backend/seed.py" from the root too.
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from backend.app import create_app
+    from backend.models import School, db
+
+app = create_app()
 
 
 schools_to_add = [
-    # Bahir Dar
     {"name": "SOS School", "city": "Bahir Dar",
      "location": "Kebele 13, Bahir Dar"},
     {"name": "Bahir Dar Academy", "city": "Bahir Dar",
@@ -15,7 +25,6 @@ schools_to_add = [
     {"name": "Abune Gorgorios School", "city": "Bahir Dar",
      "location": ""},
 
-    # Addis Ababa
     {"name": "Abune Gorgorios School", "city": "Addis Ababa",
      "location": ""},
     {"name": "Cathedral School", "city": "Addis Ababa",
@@ -27,7 +36,6 @@ schools_to_add = [
     {"name": "Ethio Excellence Academy", "city": "Addis Ababa",
      "location": ""},
 
-    # Hawassa
     {"name": "Union SOS", "city": "Hawassa",
      "location": ""},
     {"name": "EPS", "city": "Hawassa",
@@ -37,7 +45,6 @@ schools_to_add = [
     {"name": "Kdus Gebrel School", "city": "Hawassa",
      "location": ""},
 
-    # Adama
     {"name": "Makko Billi School", "city": "Adama",
      "location": ""},
 ]
@@ -51,7 +58,7 @@ def seed_schools():
         for school_data in schools_to_add:
             existing_school = School.query.filter_by(
                 name=school_data["name"],
-                city=school_data["city"]
+                city=school_data["city"],
             ).first()
 
             if existing_school:
@@ -62,7 +69,7 @@ def seed_schools():
                 name=school_data["name"],
                 city=school_data["city"],
                 location=school_data["location"],
-                verification_status="pending"
+                verification_status="pending",
             )
 
             db.session.add(school)
@@ -81,4 +88,16 @@ def check_database():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Seed or inspect EduConnect school records."
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Only print the database location and school count.",
+    )
+    args = parser.parse_args()
+
+    if not args.check:
+        seed_schools()
     check_database()

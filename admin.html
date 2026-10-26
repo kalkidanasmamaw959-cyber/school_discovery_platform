@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Console | EduConnect Ethiopia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+        <a href="index.html" class="dashboard-logo">
+            <span>EduConnect</span> Admin
+        </a>
+
+        <div class="dashboard-header-right">
+            <span class="dashboard-school-name" id="admin-name">
+                Loading...
+            </span>
+            <button type="button" class="dashboard-logout" id="admin-logout">
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <aside class="dashboard-sidebar">
+            <nav class="dashboard-nav">
+                <a href="#admin-overview" class="active">Overview</a>
+                <a href="#admin-schools">Schools</a>
+                <a href="#admin-users">Users</a>
+                <a href="#admin-reviews">Reviews</a>
+                <a href="#admin-posts">Posts</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main" id="admin-overview">
+
+            <p id="admin-message" class="form-message" role="status"
+               aria-live="polite"></p>
+
+            <section class="dashboard-welcome">
+                <div>
+                    <p class="dashboard-small-label">ADMIN CONSOLE</p>
+                    <h1>Platform moderation</h1>
+                    <p>
+                        Review certification submissions, approve or reject
+                        schools, manage accounts and moderate content. A school
+                        is never marked verified automatically.
+                    </p>
+                </div>
+                <span class="verification-badge admin-badge">Administrator</span>
+            </section>
+
+            <section class="dashboard-stats" id="admin-stats">
+                <div class="dashboard-stat-card">
+                    <p>Total Schools</p>
+                    <h2 id="stat-schools">—</h2>
+                    <span>All profiles</span>
+                </div>
+                <div class="dashboard-stat-card">
+                    <p>Pending</p>
+                    <h2 id="stat-pending">—</h2>
+                    <span>Awaiting certification review</span>
+                </div>
+                <div class="dashboard-stat-card">
+                    <p>Verified</p>
+                    <h2 id="stat-verified">—</h2>
+                    <span>Admin approved</span>
+                </div>
+                <div class="dashboard-stat-card">
+                    <p>Users</p>
+                    <h2 id="stat-users">—</h2>
+                    <span>School and admin accounts</span>
+                </div>
+                <div class="dashboard-stat-card">
+                    <p>Hidden Reviews</p>
+                    <h2 id="stat-hidden-reviews">—</h2>
+                    <span>Moderated content</span>
+                </div>
+                <div class="dashboard-stat-card">
+                    <p>Hidden Posts</p>
+                    <h2 id="stat-hidden-posts">—</h2>
+                    <span>Moderated content</span>
+                </div>
+            </section>
+
+            <section class="dashboard-card" id="admin-schools">
+                <div class="dashboard-card-header">
+                    <div>
+                        <p class="dashboard-small-label">VERIFICATION</p>
+                        <h2>School Registrations</h2>
+                    </div>
+                    <div class="admin-toolbar">
+                        <select id="school-status-filter">
+                            <option value="">All statuses</option>
+                            <option value="pending" selected>Pending</option>
+                            <option value="verified">Verified</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                        <button type="button" class="dashboard-action"
+                                id="refresh-schools">
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <p class="field-help">
+                    Verify only after checking the submitted Ministry of
+                    Education registration details. This system does not
+                    automatically contact the Ministry registry.
+                </p>
+
+                <div id="admin-school-list" class="admin-list">
+                    <div class="empty-content"><p>Loading schools...</p></div>
+                </div>
+            </section>
+
+            <section class="dashboard-card" id="admin-users">
+                <div class="dashboard-card-header">
+                    <div>
+                        <p class="dashboard-small-label">ACCOUNTS</p>
+                        <h2>Users</h2>
+                    </div>
+                    <button type="button" class="dashboard-action"
+                            id="refresh-users">
+                        Refresh
+                    </button>
+                </div>
+                <div id="admin-user-list" class="admin-list"></div>
+            </section>
+
+            <section class="dashboard-card" id="admin-reviews">
+                <div class="dashboard-card-header">
+                    <div>
+                        <p class="dashboard-small-label">MODERATION</p>
+                        <h2>Reviews</h2>
+                    </div>
+                    <button type="button" class="dashboard-action"
+                            id="refresh-reviews">
+                        Refresh
+                    </button>
+                </div>
+                <div id="admin-review-list" class="admin-list"></div>
+            </section>
+
+            <section class="dashboard-card" id="admin-posts">
+                <div class="dashboard-card-header">
+                    <div>
+                        <p class="dashboard-small-label">MODERATION</p>
+                        <h2>Posts</h2>
+                    </div>
+                    <button type="button" class="dashboard-action"
+                            id="refresh-posts">
+                        Refresh
+                    </button>
+                </div>
+                <div id="admin-post-list" class="admin-list"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- School review modal -->
+    <div id="school-review-modal" class="admin-modal hidden"
+         role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
+        <div class="admin-modal-card">
+            <div class="admin-modal-header">
+                <h2 id="review-modal-title">Review school</h2>
+                <button type="button" class="admin-modal-close"
+                        id="close-school-modal" aria-label="Close">×</button>
+            </div>
+
+            <div id="school-review-content"></div>
+
+            <label class="modal-label" for="review-notes">
+                Reviewer notes
+            </label>
+            <textarea id="review-notes" rows="4" maxlength="1000"
+                      placeholder="Record what was checked. A rejection reason is required."></textarea>
+
+            <p id="review-message" class="form-message" role="status"></p>
+
+            <div class="profile-form-actions">
+                <button type="button" class="dashboard-action"
+                        id="approve-school-btn">
+                    Approve / Verify
+                </button>
+                <button type="button" class="reject-btn"
+                        id="reject-school-btn">
+                    Reject
+                </button>
+                <button type="button" class="profile-cancel-btn"
+                        id="cancel-school-modal">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="api-config.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>

@@ -199,8 +199,15 @@
                                     </option>
 
                                     <option value="Primary & Secondary">
-                                        Primary & Secondary
+                                        Primary &amp; Secondary
                                     </option>
+                                    <option value="Kindergarten">
+                                        Kindergarten
+                                    </option>
+                                    <option value="Kindergarten, Primary & Secondary">
+                                        Kindergarten, Primary &amp; Secondary
+                                    </option>
+
 
                                 </select>
 
@@ -336,7 +343,9 @@
                                 <input
                                     type="password"
                                     id="password"
-                                    placeholder="Create a password"
+                                    placeholder="Create a password (min. 8 characters)"
+                                    minlength="8"
+                                    autocomplete="new-password"
                                     required
                                 >
 
@@ -353,6 +362,8 @@
                                     type="password"
                                     id="confirm-password"
                                     placeholder="Repeat password"
+                                    minlength="8"
+                                    autocomplete="new-password"
                                     required
                                 >
 
@@ -372,10 +383,66 @@
                         </strong>
 
                         <p>
-                            Your school profile will be reviewed
-                            before it becomes officially verified
-                            on EduConnect.
+                            Submit your Ministry of Education certification
+                            information. An EduConnect administrator will
+                            review it before your profile is marked verified.
+                            Registration does not verify a school automatically.
                         </p>
+
+                    </div>
+
+
+                    <div class="form-section verification-fields">
+
+                        <h3>Certification Information</h3>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="certification-number">
+                                    Ministry of Education Registration Number
+                                </label>
+                                <input
+                                    type="text"
+                                    id="certification-number"
+                                    placeholder="Enter the official registration number"
+                                    maxlength="120"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="certification-issuer">
+                                    Issuing Authority
+                                </label>
+                                <input
+                                    type="text"
+                                    id="certification-issuer"
+                                    value="Ministry of Education"
+                                    maxlength="150"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="certification-url">
+                                Certificate Reference Link
+                                <span>(Optional)</span>
+                            </label>
+                            <input
+                                type="url"
+                                id="certification-url"
+                                placeholder="https://..."
+                                maxlength="500"
+                            >
+                            <small class="field-help">
+                                A link to an official certificate or registry
+                                reference helps the administrator verify your
+                                school. It is not shown publicly.
+                            </small>
+                        </div>
 
                     </div>
 
@@ -436,6 +503,7 @@
     </footer>
 
 
+  <script src="api-config.js"></script>
   <script src="registration.js"></script>
 
 </body>

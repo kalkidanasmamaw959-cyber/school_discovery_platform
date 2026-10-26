@@ -215,11 +215,18 @@
 
                         </label>
 
-                        <a href="#">
-                            Forgot password?
-                        </a>
+                        <span class="login-hint">
+                            Password resets are not automated. Contact the
+                            platform administrator.
+                        </span>
 
                     </div>
+
+
+                    <p class="admin-login-note">
+                        Administrators sign in here too and are taken to the
+                        admin console automatically.
+                    </p>
 
 
                     <!-- BUTTON -->
@@ -288,6 +295,20 @@
     </footer>
 
 
+    <script>
+        (function () {
+            const form = document.getElementById("login-form");
+            if (!form) return;
+            form.addEventListener("submit", function (event) {
+                if (window.EDUCONNECT_LOGIN_READY) return;
+                event.preventDefault();
+                document.getElementById("login-message").textContent =
+                    "The login script did not load. Hard-refresh the page " +
+                    "or open the app through http://127.0.0.1:5000/app/.";
+            });
+        })();
+    </script>
+    <script src="api-config.js"></script>
     <script src="login.js"></script>
 
 </body>

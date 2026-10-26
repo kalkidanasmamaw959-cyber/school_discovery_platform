@@ -16,8 +16,12 @@
         </a>
 
         <div class="dashboard-header-right">
-            <span class="dashboard-school-name">SOS School</span>
-            <a href="school-login.html" class="dashboard-logout">Logout</a>
+            <span class="dashboard-school-name" id="header-school-name">
+                Loading...
+            </span>
+            <button type="button" class="dashboard-logout" id="logout-btn">
+                Logout
+            </button>
         </div>
     </header>
 
@@ -30,49 +34,60 @@
                 <a href="#dashboard-home" class="active">Dashboard</a>
                 <a href="#school-profile">My Profile</a>
                 <a href="#school-photos">Photos</a>
-                <a href="#school-posts">Posts</a>
+                <a href="#school-posts-section">Posts</a>
                 <a href="#recent-activity">Reviews</a>
-                <a href="#school-profile">Settings</a>
+                <a href="#verification-section">Verification</a>
+                <a href="#account-settings">Account</a>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="dashboard-main" id="dashboard-home">
 
+            <p id="dashboard-message" class="form-message" role="status"
+               aria-live="polite"></p>
+
             <!-- Welcome Section -->
             <section class="dashboard-welcome">
                 <div>
                     <p class="dashboard-small-label">SCHOOL DASHBOARD</p>
-                    <h1>Welcome, SOS School!</h1>
-                    <p>Manage your school's information and connect with families.</p>
+                    <h1 id="welcome-title">Welcome!</h1>
+                    <p id="welcome-description">
+                        Manage your school's information and connect with
+                        families.
+                    </p>
                 </div>
 
-                <span class="verification-badge">
-                    Pending Verification
+                <span class="verification-badge" id="verification-badge">
+                    Loading
                 </span>
             </section>
 
             <!-- Statistics -->
             <section class="dashboard-stats">
 
-                <div class="stat-card">
+                <div class="dashboard-stat-card">
                     <p>Profile Completion</p>
-                    <h2>75%</h2>
+                    <h2 id="completion-count">0%</h2>
+                    <span>Based on provided profile fields</span>
                 </div>
 
-                <div class="stat-card">
-                    <p>Photos</p>
+                <div class="dashboard-stat-card">
+                    <p>Photo Previews</p>
                     <h2 id="photo-count">0</h2>
+                    <span>Local to this browser</span>
                 </div>
 
-                <div class="stat-card">
+                <div class="dashboard-stat-card">
                     <p>Posts</p>
                     <h2 id="post-count">0</h2>
+                    <span>Published and hidden posts</span>
                 </div>
 
-                <div class="stat-card">
+                <div class="dashboard-stat-card">
                     <p>Reviews</p>
-                    <h2>0</h2>
+                    <h2 id="review-count">0</h2>
+                    <span>Family reviews</span>
                 </div>
 
             </section>
@@ -104,32 +119,32 @@
 
                         <div>
                             <strong>School Name</strong>
-                            <p id="display-school-name">SOS School</p>
+                            <p id="display-school-name">—</p>
                         </div>
 
                         <div>
                             <strong>City</strong>
-                            <p id="display-city">Bahir Dar</p>
+                            <p id="display-city">—</p>
                         </div>
 
                         <div>
                             <strong>School Level</strong>
-                            <p id="display-level">Primary &amp; Secondary</p>
+                            <p id="display-level">—</p>
                         </div>
 
                         <div>
                             <strong>Email</strong>
-                            <p id="display-email">school@example.com</p>
+                            <p id="display-email">—</p>
                         </div>
 
                         <div>
                             <strong>Phone</strong>
-                            <p id="display-phone">+251 900 000 000</p>
+                            <p id="display-phone">—</p>
                         </div>
 
                         <div>
                             <strong>Address</strong>
-                            <p id="display-address">Bahir Dar, Ethiopia</p>
+                            <p id="display-address">—</p>
                         </div>
 
                         <div>
@@ -140,6 +155,16 @@
                         <div>
                             <strong>Telegram</strong>
                             <p id="display-telegram">Not provided</p>
+                        </div>
+
+                        <div>
+                            <strong>Programs</strong>
+                            <p id="display-programs">Not provided</p>
+                        </div>
+
+                        <div>
+                            <strong>Facilities</strong>
+                            <p id="display-facilities">Not provided</p>
                         </div>
 
                     </div>
@@ -154,6 +179,7 @@
                                 <input
                                     id="edit-school-name"
                                     type="text"
+                                    maxlength="150"
                                     required>
                             </div>
 
@@ -189,6 +215,7 @@
                                 <input
                                     id="edit-email"
                                     type="email"
+                                    maxlength="150"
                                     required>
                             </div>
 
@@ -197,6 +224,7 @@
                                 <input
                                     id="edit-phone"
                                     type="tel"
+                                    maxlength="30"
                                     required>
                             </div>
 
@@ -205,6 +233,7 @@
                                 <input
                                     id="edit-address"
                                     type="text"
+                                    maxlength="255"
                                     required>
                             </div>
 
@@ -213,6 +242,7 @@
                                 <input
                                     id="edit-website"
                                     type="url"
+                                    maxlength="500"
                                     placeholder="https://example.com">
                             </div>
 
@@ -221,12 +251,51 @@
                                 <input
                                     id="edit-telegram"
                                     type="url"
+                                    maxlength="500"
                                     placeholder="https://t.me/your_school">
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-programs">
+                                    Programs
+                                    <span class="field-help-inline">
+                                        (comma separated)
+                                    </span>
+                                </label>
+                                <input
+                                    id="edit-programs"
+                                    type="text"
+                                    placeholder="Primary Education, Secondary Education">
+                            </div>
+
+                            <div class="profile-field">
+                                <label for="edit-facilities">
+                                    Facilities
+                                    <span class="field-help-inline">
+                                        (comma separated)
+                                    </span>
+                                </label>
+                                <input
+                                    id="edit-facilities"
+                                    type="text"
+                                    placeholder="Library, Computer Lab">
+                            </div>
+
+                            <div class="profile-field profile-field-wide">
+                                <label for="edit-description">
+                                    School Description
+                                </label>
+                                <textarea
+                                    id="edit-description"
+                                    rows="4"
+                                    maxlength="2000"
+                                    placeholder="Describe your school using facts you can confirm."></textarea>
                             </div>
 
                         </div>
 
-                        <p id="profile-message" role="status"></p>
+                        <p id="profile-message" class="form-message"
+                           role="status"></p>
 
                         <div class="profile-form-actions">
                             <button type="submit" class="dashboard-action">
@@ -257,7 +326,7 @@
                     <div class="quick-actions">
 
                         <button type="button" id="add-photos-btn">
-                            + Add Photos
+                            + Add Photo Previews
                         </button>
 
                         <button type="button" id="create-post-btn">
@@ -281,53 +350,187 @@
                     <!-- Photo Preview Area -->
                     <div id="school-photos">
                         <h3>School Photos</h3>
+                        <p class="field-help">
+                            Previews are stored only in this browser tab for
+                            now. They are not uploaded to the server.
+                        </p>
                         <div
                             id="school-photo-preview"
                             class="photo-preview">
                         </div>
                     </div>
 
-                    <!-- School Posts -->
-                    <div id="school-posts" class="school-posts">
-                        <h3>My School Posts</h3>
-                        <p id="no-posts-message">
-                            You haven't created any posts yet.
-                        </p>
-                    </div>
-
                 </div>
 
             </section>
 
-            <!-- Recent Activity -->
+            <!-- Posts -->
+            <section class="dashboard-card" id="school-posts-section">
+
+                <div class="dashboard-card-header">
+                    <div>
+                        <p class="dashboard-small-label">PUBLIC UPDATES</p>
+                        <h2>My School Posts</h2>
+                    </div>
+                </div>
+
+                <form id="post-form" class="post-create-form" hidden>
+                    <div class="profile-field">
+                        <label for="post-title">Post title</label>
+                        <input
+                            id="post-title"
+                            type="text"
+                            maxlength="200"
+                            placeholder="School open day"
+                            required>
+                    </div>
+                    <div class="profile-field">
+                        <label for="post-content">Post content</label>
+                        <textarea
+                            id="post-content"
+                            rows="4"
+                            maxlength="5000"
+                            placeholder="Share a verified school update..."
+                            required></textarea>
+                    </div>
+                    <p id="post-message" class="form-message" role="status"></p>
+                    <div class="profile-form-actions">
+                        <button type="submit" class="dashboard-action">
+                            Publish Post
+                        </button>
+                        <button type="button" class="profile-cancel-btn"
+                                id="cancel-post-btn">Cancel</button>
+                    </div>
+                </form>
+
+                <div id="school-posts" class="school-posts">
+                    <p id="no-posts-message">
+                        You haven't created any posts yet.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- Verification -->
+            <section class="dashboard-card" id="verification-section">
+
+                <div class="dashboard-card-header">
+                    <div>
+                        <p class="dashboard-small-label">TRUST &amp; SAFETY</p>
+                        <h2>Verification</h2>
+                    </div>
+                    <span class="verification-badge" id="verification-detail-badge">
+                        Loading
+                    </span>
+                </div>
+
+                <div id="verification-summary" class="verification-summary"></div>
+
+                <details class="verification-resubmit">
+                    <summary>Submit or update certification information</summary>
+
+                    <form id="verification-form">
+                        <div class="profile-edit-grid">
+                            <div class="profile-field">
+                                <label for="verify-cert-number">
+                                    Ministry of Education registration number
+                                </label>
+                                <input id="verify-cert-number" type="text"
+                                       maxlength="120" required>
+                            </div>
+                            <div class="profile-field">
+                                <label for="verify-cert-issuer">
+                                    Issuing authority
+                                </label>
+                                <input id="verify-cert-issuer" type="text"
+                                       maxlength="150" required>
+                            </div>
+                            <div class="profile-field profile-field-wide">
+                                <label for="verify-cert-url">
+                                    Certificate reference link
+                                </label>
+                                <input id="verify-cert-url" type="url"
+                                       maxlength="500" placeholder="https://...">
+                            </div>
+                            <div class="profile-field profile-field-wide">
+                                <label for="verify-notes">Notes for the reviewer</label>
+                                <textarea id="verify-notes" rows="3"
+                                          maxlength="1000"></textarea>
+                            </div>
+                        </div>
+                        <p id="verification-message" class="form-message"
+                           role="status"></p>
+                        <div class="profile-form-actions">
+                            <button type="submit" class="dashboard-action">
+                                Submit for Review
+                            </button>
+                        </div>
+                    </form>
+                </details>
+            </section>
+
+            <!-- Reviews -->
             <section
                 class="dashboard-card recent-activity"
                 id="recent-activity">
 
                 <div class="dashboard-card-header">
                     <div>
-                        <p class="dashboard-small-label">ACTIVITY</p>
-                        <h2>Recent Activity</h2>
+                        <p class="dashboard-small-label">FEEDBACK</p>
+                        <h2>Family Reviews</h2>
                     </div>
                 </div>
 
-                <div class="empty-activity">
-                    <div class="empty-icon">+</div>
-                    <h3>No activity yet</h3>
-                    <p>
-                        Start by completing your school profile
-                        and adding some photos.
-                    </p>
+                <p class="field-help">
+                    Reviews are published immediately. Administrators can hide
+                    inappropriate content.
+                </p>
+
+                <div id="dashboard-reviews" class="dashboard-reviews">
+                    <div class="empty-activity">
+                        <div class="empty-icon">+</div>
+                        <h3>No reviews yet</h3>
+                        <p>Family reviews will appear here.</p>
+                    </div>
                 </div>
 
+            </section>
+
+            <!-- Account -->
+            <section class="dashboard-card" id="account-settings">
+                <div class="dashboard-card-header">
+                    <div>
+                        <p class="dashboard-small-label">ACCOUNT</p>
+                        <h2>Account Settings</h2>
+                    </div>
+                </div>
+                <div class="profile-information">
+                    <div>
+                        <strong>Username</strong>
+                        <p id="account-username">—</p>
+                    </div>
+                    <div>
+                        <strong>Login Email</strong>
+                        <p id="account-email">—</p>
+                    </div>
+                    <div>
+                        <strong>Role</strong>
+                        <p id="account-role">—</p>
+                    </div>
+                    <div>
+                        <strong>Session</strong>
+                        <p><button type="button" class="profile-cancel-btn"
+                                   id="logout-btn-secondary">Sign out</button></p>
+                    </div>
+                </div>
             </section>
 
         </main>
     </div>
 
     <!-- JavaScript -->
+    <script src="api-config.js"></script>
     <script src="dashboard.js"></script>
 
 </body>
 </html>
-

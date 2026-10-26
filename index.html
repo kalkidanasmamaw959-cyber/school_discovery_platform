@@ -28,6 +28,8 @@
 
                 <a href="#cities">Schools</a>
 
+                <a href="#recommend">Find My School</a>
+
                 <a href="#about">About</a>
 
             </nav>
@@ -371,8 +373,30 @@
                 Primary & Secondary
             </option>
 
+            <option value="Kindergarten">
+                Kindergarten
+            </option>
+
         </select>
 
+        <label class="school-verified-filter">
+            <input
+                type="checkbox"
+                id="verified-filter"
+                onchange="filterSchools()"
+            >
+            Verified only
+        </label>
+
+    </div>
+
+
+    <!-- Loading / network status -->
+    <div
+        id="school-list-status"
+        class="school-status-message hidden"
+        role="status"
+        aria-live="polite">
     </div>
 
 
@@ -406,17 +430,242 @@
 
             <div class="container">
 
-
-                <button
-                    class="back-button"
-                    onclick="backToSchools()">
-
-                    ← Back to Schools
-
-                </button>
-
-
                 <div id="school-detail-container">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECOMMENDATIONS ================= -->
+
+        <section id="recommend" class="recommend-section">
+
+            <div class="container">
+
+                <div class="recommend-heading">
+
+                    <div>
+                        <p class="section-label">
+                            SMART SCHOOL MATCH
+                        </p>
+
+                        <h2>
+                            Find schools that fit your family.
+                        </h2>
+                    </div>
+
+                    <p>
+                        Tell us what matters to you. Recommendations use a
+                        transparent weighted algorithm based only on school
+                        data in the database. Missing information is shown
+                        rather than guessed.
+                    </p>
+
+                </div>
+
+
+                <div class="recommend-layout">
+
+                    <form id="recommend-form" class="recommend-form">
+
+                        <h3>Your preferences</h3>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="recommend-city">
+                                    Preferred city
+                                </label>
+                                <select id="recommend-city">
+                                    <option value="">
+                                        Any city
+                                    </option>
+                                    <option value="Addis Ababa">
+                                        Addis Ababa
+                                    </option>
+                                    <option value="Bahir Dar">
+                                        Bahir Dar
+                                    </option>
+                                    <option value="Hawassa">
+                                        Hawassa
+                                    </option>
+                                    <option value="Adama">
+                                        Adama
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recommend-level">
+                                    Education level
+                                </label>
+                                <select id="recommend-level">
+                                    <option value="">
+                                        Any level
+                                    </option>
+                                    <option value="Kindergarten">
+                                        Kindergarten
+                                    </option>
+                                    <option value="Primary">
+                                        Primary
+                                    </option>
+                                    <option value="Secondary">
+                                        Secondary
+                                    </option>
+                                    <option value="Primary & Secondary">
+                                        Primary &amp; Secondary
+                                    </option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <fieldset class="preference-group">
+                            <legend>Preferred facilities</legend>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Library">
+                                Library
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Computer Lab">
+                                Computer Lab
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Science Lab">
+                                Science Lab
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Playground">
+                                Playground
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Sports Field">
+                                Sports Field
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Cafeteria">
+                                Cafeteria
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Transport">
+                                Transport
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-facility"
+                                       value="Boarding">
+                                Boarding
+                            </label>
+                        </fieldset>
+
+
+                        <fieldset class="preference-group">
+                            <legend>Preferred programs</legend>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-program"
+                                       value="Primary">
+                                Primary
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-program"
+                                       value="Secondary">
+                                Secondary
+                            </label>
+
+                            <label class="check-option">
+                                <input type="checkbox"
+                                       name="recommend-program"
+                                       value="Kindergarten">
+                                Kindergarten
+                            </label>
+                        </fieldset>
+
+
+                        <label class="check-option verified-only">
+                            <input type="checkbox" id="recommend-verified">
+                            Only show admin-verified schools
+                        </label>
+
+
+                        <p class="recommend-fee-note">
+                            Fee information is not collected, so budget is not
+                            used. You will never see invented fees or ratings.
+                        </p>
+
+
+                        <button
+                            type="submit"
+                            class="register-button"
+                            id="recommend-submit-btn">
+                            Get Recommendations
+                        </button>
+
+                        <p id="recommend-message"
+                           class="form-message"
+                           role="status"
+                           aria-live="polite"></p>
+
+                    </form>
+
+
+                    <div class="recommend-results">
+
+                        <div id="recommend-results-initial"
+                             class="recommend-placeholder">
+                            <span>AI</span>
+                            <h3>Your matches will appear here</h3>
+                            <p>
+                                Each result explains why it matched, shows
+                                which data is missing, and lets you compare
+                                schools side by side.
+                            </p>
+                        </div>
+
+                        <div id="recommend-list"></div>
+
+                        <div id="compare-row" class="compare-row hidden">
+                            <button type="button" id="compare-btn"
+                                    class="dashboard-action" disabled>
+                                Compare selected
+                            </button>
+                            <span id="compare-count">0 selected</span>
+                        </div>
+
+                        <div id="compare-table-container"
+                             class="compare-table-container hidden">
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -498,6 +747,7 @@
     </footer>
 
 
+    <script src="api-config.js"></script>
     <script src="script.js"></script>
 
 </body>
