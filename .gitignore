@@ -1,0 +1,27 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Local database files and journals (the existing DB is kept locally)
+instance/*.db
+instance/*.db-journal
+instance/*.db-wal
+instance/*.db-shm
+instance/backups/
+backend/instance/
+
+# Logs and editor files
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
